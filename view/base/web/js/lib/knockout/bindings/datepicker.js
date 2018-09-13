@@ -17,7 +17,7 @@ define([
     'use strict';
 
     var defaults = {
-        dateFormat: 'mm\/dd\/yyyy',
+        dateFormat: 'dd.mm.yyyy',
         showsTime: false,
         timeFormat: null,
         buttonImage: null,
@@ -51,10 +51,10 @@ define([
 
             $(el).calendar(options);
 
-            if ('dd.MM.yy' === config.options.dateFormat) {
+            if ('dd.MM.y' === config.options.dateFormat) {
                 observable() && $(el).datepicker(
                     'setDate',
-                    moment(observable(), utils.normalizeDate('dd/MM/yyyy')).toDate()
+                    moment(observable(), utils.normalizeDate('dd.MM.y')).toDate()
                 );
             }
             else {
